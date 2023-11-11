@@ -13,7 +13,7 @@
 #################################################################
 
 # WordPress version
-wpversion: latest
+wpversion: 4.2
 
 # language/timezone
 wplocale: en_US
@@ -38,7 +38,7 @@ db:
 #################################################################
 
 wpsettings:
-  url: wpdistillery.vm
+  url: 192.168.33.10   
   title: Example Title
   description: Example Description
   permalink_structure: "/%postname%/"
@@ -98,9 +98,9 @@ plugins_inactive:
 setup:
   wp: true
   settings: true
-  theme: true
-  plugins: true
-  cleanup: true
+  theme: false
+  plugins: false
+  cleanup: false
   # adjust what data you want to be deleted within the cleanup (requires `cleanup: true`)
   comment: true
   posts: true

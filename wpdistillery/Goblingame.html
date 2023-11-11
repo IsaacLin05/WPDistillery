@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+	<head> 
+		<title>Goblin Stone Game</title>
+		<style></style>
+		<script>
+			function initialize()
+      {
+        console.log("hi");
+				const piles = [3,3,3];
+        dialogues = [];
+        smallestPile = 0;
+        numRocks = 9;
+        game();
+			}
+      
+      function game()
+      {
+        while(numRocks>0){
+          goblins();
+          //player();
+        }
+      }
+      
+      function determineSmallestPile()
+      {
+        let min = 3;
+        for(let i = 0; i<piles.length; i++){
+          if(piles[i]<min){
+            min = i;
+          }
+        }
+        smallestPile = min;
+        console.log(min);
+      }
+      
+      function takeStone(pileNum)
+      {
+        console.log(pileNum)
+        piles[pileNum-1]--;
+        //changeImage(pileNum);
+      }
+      
+      function goblins()
+      {
+        console.log("hi");
+        determineSmallestPile();
+        takeStone(smallestPile);
+        numRocks--;
+      }
+
+      
+		</script>
+  </head>
+	<body onload = "initialize();">
+    <div id="stonedisplay">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXtKApnsjoL3x7drJ7fN5lDr3YDtTA8_vJvg&usqp=CAU" alt="1stone" style="width:80px;height:80px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqYPNoQbZOSaIZ9RGvLdYfZ2jt4dWjleT0Nw&usqp=CAU" alt="2stones" style="width:100px;height:100px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr2ktYmuizPbBwx96EjYHS0l7yEoK3XVwHbg&usqp=CAU" alt="3stones" style="width:80px;height:80px;">
+    </div>
+		<div id=“pilebuttons”>
+			<button id=“pile1” onclick = "takeStone(1);">PILE 1</button>
+			<button id=“pile2” onclick = "takeStone(2);">PILE 2</button>
+			<button id=“pile3” onclick = "takeStone(3);">PILE 3</button>
+		</div>
+
+		<div id=“reset/htp”>
+			<!-- <button id=“reset” onclick = “reset();”>Reset</button>
+			<button id=“htp” onclick = “htp();”>How to Play</button> -->
+		</div>
+
+    <div id="dialogue">
+      <p></p>
+    </div>
+	</body>
+</html>

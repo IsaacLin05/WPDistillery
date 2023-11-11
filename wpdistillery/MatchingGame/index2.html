@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Matching Game</title>
+      <script>
+        let totalCount = 0;
+        let imageCheck = 0;
+        let prevCheck = 30;
+        var prevCk = "";
+        let imageCk = "";
+        var clickCount = 1;
+        let totalPairs = 8;
+     
+        function reset()
+        {
+          let button = document.querySelectorAll('.imageButton');
+          button.forEach(function(button)
+          {
+            button.style.backgroundImage = 'none';
+          })
+
+          
+        }
+
+
+
+          function checkImage()
+          {
+            
+            if(imageCheck === 1 && prevCheck === 4)
+            {
+              clickCount = 0;
+              totalPairs--;
+
+            }
+            else if(imageCheck === 3 && prevCheck === 8)
+            {
+              clickCount = 0;
+              totalPairs--;
+            }
+            else if(imageCheck === 16 && prevCheck === 5)
+            {
+              clickCount = 0;
+              totalPairs--;
+            } 
+            else if(imageCheck === 2 && prevCheck === 12)
+            {
+              clickCount = 0;
+              totalPairs--;
+            }
+            else if(imageCheck === 6 && prevCheck === 7)
+            {
+              clickCount = 0;
+              totalPairs--;
+            }
+            else if(imageCheck === 9 && prevCheck === 11)
+            {
+              clickCount = 0;
+              totalPairs--;
+            }
+            else if(imageCheck === 10 && prevCheck === 13)
+            {
+              clickCount = 0;
+              totalPairs--;
+            }
+            else if(imageCheck === 14 && prevCheck === 15)
+            {
+              clickCount = 0;
+              totalPairs--;
+            }
+            else 
+            {
+           
+            }
+            
+        
+          }
+
+          function checkCount()
+          {
+            if (imageCheck === prevCheck) 
+            {
+              
+            }
+          
+            if (clickCount === 2)
+            {
+              checkImage();
+              console.log("e");
+              
+            } 
+            console.log(clickCount);
+            clickCount = 0;
+            document.getElementById("score").innerHTML = "Score: " + totalCount;
+          }
+
+          function reveal1()
+          { 
+          
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img1");
+              button.style.backgroundImage="url('images/jupiter.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+           
+
+            imageCheck = 1;
+            checkCount();
+          }
+
+          function reveal2()
+          {
+           
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img2");
+              button.style.backgroundImage="url('images/uranus.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+              
+            }
+            imageCheck = 2;
+            //clickCount++;
+            checkCount();
+          }
+          function reveal3()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img3");
+              button.style.backgroundImage="url('images/sun.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+           
+            imageCheck = 3;
+            checkCount();
+          }
+          function reveal4()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img4");
+              button.style.backgroundImage="url('images/jupiter.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+           
+            imageCheck = 4;
+            checkCount();
+          }
+          function reveal5()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img5");
+              button.style.backgroundImage="url('images/neptune.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+           
+            imageCheck = 5;
+            checkCount();
+          }
+          function reveal6()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img6");
+              button.style.backgroundImage="url('images/clock.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+          
+            imageCheck = 6;
+            checkCount();
+          }
+          function reveal7()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img7");
+              button.style.backgroundImage="url('images/clock.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+           
+            imageCheck = 7;
+            checkCount();
+          }
+          function reveal8()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img8");
+              button.style.backgroundImage="url('images/sun.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+           
+            imageCheck = 8;
+            checkCount();
+          }
+          function reveal9()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img9");
+              button.style.backgroundImage="url('images/fridge.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+         
+            imageCheck = 9;
+            checkCount();
+          }
+          function reveal10()
+          {
+            if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img10");
+              button.style.backgroundImage="url('images/mars.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+           
+            imageCheck = 10;
+            checkCount();
+          }
+          function reveal11()
+          {if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img11");
+              button.style.backgroundImage="url('images/fridge.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+          
+            imageCheck = 11;
+            checkCount();
+          }
+          function reveal12()
+          {if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img12");
+              button.style.backgroundImage="url('images/uranus.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+            console.log(clickCount);
+            imageCheck = 12;
+          
+          }
+          function reveal13()
+          {if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img13");
+              button.style.backgroundImage="url('images/mars.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+          
+            imageCheck = 13;
+            checkCount();
+          }
+          function reveal14()
+          {if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img14");
+              button.style.backgroundImage="url('images/moon.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+          
+            imageCheck = 14;
+            checkCount();
+            }
+          
+          function reveal15()
+          {if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img15");
+              button.style.backgroundImage="url('images/moon.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+          
+            imageCheck = 15;
+            checkCount();
+          }
+          function reveal16()
+          { if (clickCount===2 || clickCount === 1 || clickCount ===0)
+            {
+              button = document.getElementById("img16");
+              button.style.backgroundImage="url('images/neptune.jpg')";
+              button.style.backgroundSize="cover";
+              totalCount++;
+              clickCount++;
+            }
+          
+            imageCheck = 16;
+            checkCount();
+          }
+      </script>
+      <style>
+        body
+        {
+          display:flex;
+          text-align: center;
+          margin:0px;
+          background-color: black;
+          width: fit-content;
+          height: fit-content;
+
+        }
+        div.rules
+        {
+          font: 20pt bold ms comic sans;
+          margin: 20px;
+          padding: 5px;
+          background-color: lightslategray;
+          font-weight: bold;
+          width: 450px;
+          
+       }
+       .button
+       {
+        
+       }
+
+       div.extra
+       {
+        font: 20pt bold;
+        padding: 5px;
+        background-color: lightslategray;
+     
+        width: 255px;
+        margin: 20px;
+       }
+
+       button.reset
+       {
+        padding: 5px;
+        width: 240px;
+        height:75px;
+       }
+
+
+        div.grid
+        {
+          background-color: black;
+          place-content: center;
+          display: grid;
+          grid-gap:10px;
+          grid-template-columns: 170px 170px 170px 170px;
+          grid-template-rows: 170px 170px 170px 170px;
+        }
+        
+      
+
+        .grid > div {
+          background-color:lightcyan;
+
+          padding:10px;
+          display:grid;
+          place-items: center;
+        }
+      </style>
+    </head>
+    <body>
+      <div class = "rules">
+        <p>The game mechanics are simple. The user will click on an image to reveal it. It will stay
+          revealed until the user clicks on a second image. If both images match, they will stay revealed.
+          If they don’t, they will both change back into the hidden icon. Once all of the images have been
+          revealed the game ends.
+        </br> </br>
+          The score is determined by the number of clicks. Each time the user clicks on one of the
+          images, add 1 to the score (the lowest possible score is 16 if you already know where all of the
+          images are or you are insanely lucky).
+          When the reset button is clicked, all of the images will return to the hidden icon and the score
+          will reset to 0</p>
+      </div>
+      <div class = "grid" id = "button">
+        <button onclick = "reveal1()" id = "img1" class = "imageButton">
+        
+        </button>
+        <button onclick = "reveal2()" id = "img2" class = "imageButton">
+         
+        </button>
+        <button onclick = "reveal3()"id = "img3" class = "imageButton">
+         
+        </button>
+        <button onclick = "reveal4()"id = "img4" class = "imageButton">
+          
+        </button>
+        <button onclick = "reveal5()"id = "img5" class = "imageButton">
+        
+        </button>
+        <button onclick = "reveal6()"id = "img6" class = "imageButton">
+        
+        </button>
+        <button onclick = "reveal7()"id = "img7" class = "imageButton">
+       
+        </button>
+        <button onclick = "reveal8()"id = "img8" class = "imageButton">
+     
+        </button>
+        <button onclick = "reveal9()"id = "img9" class = "imageButton">
+         
+        </button>
+        <button onclick = "reveal10()"id = "img10" class = "imageButton">
+          
+        </button>
+        <button onclick = "reveal11()"id = "img11" class = "imageButton">
+        
+        </button>
+        <button onclick = "reveal12()"id = "img12" class = "imageButton">
+       
+        </button>
+        <button onclick = "reveal13()"id = "img13" class = "imageButton">
+          
+        </button>
+        <button onclick = "reveal14()"id = "img14" class = "imageButton">
+          
+        </button>
+        <button onclick = "reveal15()"id = "img15" class = "imageButton">
+          
+        </button>
+        <button onclick = "reveal16()"id = "img16" class = "imageButton">
+          
+        </button>
+
+
+      </div>
+      <div class = "extra">
+        <bold id = "score"> Total Score: </bold>
+      </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+      <button onclick = "reset()" class = "reset">Reset Game</button>
+      </div>
+
+    </body>
+  </html>

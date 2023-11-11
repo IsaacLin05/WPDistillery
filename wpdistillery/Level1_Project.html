@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<title>  Hot and Cold  </title>
+			<style></style>
+			<script>	
+			var totalTries=6;
+			var number = Math.floor(Math.random()*100)+1;		
+			var answer;
+			var addAnswer;
+
+
+
+			function App() 
+			{
+            	answer = document.getElementById("guessAnswer").value;
+                totalTries--;
+			    message = "";
+				if (addAnswer > answer) {
+					answer = addAnswer;
+				}
+
+				if(totalTries==0) {
+					message = "Sorry, you're outta tries!";
+				} else {
+                    if (answer > 100 || answer < 1) {
+				
+			         message = ("Error! Not a valid number!");
+				 totalTries++;
+			      } else if(answer == number)
+			      {
+				message = "Congratulations! That is the correct answer!";
+			      } else if((number > answer) && (number - 5 < answer)) 
+			      {
+				message = "Very Hot!";
+	        	      } else if((number < answer) && (number + 5 > answer)) 
+			      {
+				message = "Very Hot!";
+		  	      } else if((number > answer) && (number - 6 < answer || number - 8 < answer)) 
+			      {
+		       	        message = "Hot";
+			      } else if((number < answer) && (number + 6 > answer || number + 8 > answer)) 
+     			      {
+				message = "Hot";
+			      } else if((number > answer) && (number - 9 < answer || number - 15 < answer)) 
+			      {
+				message = "Very Warm";
+			      } else if((number < answer) && (number + 9 > answer || number + 15 > answer))
+			      {
+			        message = "Very Warm";
+			      } else if((number > answer) && (number - 16 < answer || number - 20 < answer))
+			      { 
+				message = "Warm";
+			      } else if((number < answer) && (number + 16 > answer || number + 20 > answer)) 
+			      { 
+				message = "Warm";
+			      } else if((number > answer) && (number - 21 < answer || number - 30 < answer))
+			      {
+				message = "Cool";
+			      } else if((number < answer) && (number + 21 > answer || number + 30 > answer)) 
+			      {
+				message = "Cool";
+			      } else if((number > answer) && (number - 31 < answer || number - 40 < answer))
+			      {
+			        message = "Very Cool";
+			      } else if((number < answer) && (number + 31 > answer || number + 40 > answer)) 		
+			      {
+				message = "Very Cool";
+			      } else if((number > answer) && (number - 41 < answer || number - 55 < answer)) 
+			      { 
+				message = "Cold";
+			      } else if((number < answer) && (number + 41 > answer || number + 55 > answer))
+			      {
+				message = "Cold";
+			      } else if((number > answer) && (number - 55 < answer))
+			      { 
+				message = "Very Cold";
+			      } else if((number < answer) && (number + 55 > answer)) 
+			      {
+				message = "Very Cold";
+			      }
+				} 
+           
+				counter();
+            
+			   display();
+							
+
+			}
+			
+
+			function AddO()
+			{
+			   addAnswer = parseInt(answer) + 1;
+			   console.log("You have added 1 to your number");
+			   console.log(addAnswer);
+			   
+			}
+
+            function AddF()
+			{
+			   addAnswer = parseInt(answer) + 5;
+			   console.log("You have added 5 to your number");
+			   console.log(addAnswer);
+			   
+			}
+
+            function AddT()
+			{
+			   addAnswer = parseInt(answer) + 10;
+			   console.log("You have added 10 to your number");
+			   console.log(addAnswer);
+
+			}
+
+            function AddTF()
+			{
+			   addAnswer = parseInt(answer) + 25;
+			   console.log("You have added 25 to your number");
+			   console.log(addAnswer);
+			}
+			
+			function Reset()
+			{
+			   totalTries = 5;
+               number = Math.floor(Math.random()*100)+1;	
+			   
+			}
+
+			function display()
+			{
+			   console.log(message);
+			}
+
+            function check()
+            {
+                console.log(number);
+            }
+ 
+			function counter() 
+			{
+				var Counting = document.getElementById('numGuess');
+				Counting.innerHTML = "<p>Guess #: <strong>" + totalTries + "</strong></p>";
+			}
+			</script>
+			
+		</head>
+
+
+		<body>
+			<center>
+			<h1> Welcome to Hot and Cold </h1>
+			<p> Here are the rules to this game, there will be a number generated from numbers 1-100 and you will have to guess it correctly within 5 tries! </p>
+			<p> Additionally, when the number guessed is close or far away from the generated number, there will be a prompt telling you the approximate range! </p>
+			
+			 <div> <h4> <b>||</b> Within 5, Very Hot<b>||</b> 
+			<b>||</b>Within 6-8, Hot <b>||</b>
+			 Within 9-15, Very Warm <b>||</b>
+			 Within 16-20, Warm  <b>||</b>
+			</h4> </div>
+			<div> <h4>
+			 <b>||</b>
+			 Within 21-30, Cool <b>||</b>
+			 Within 31-40, Very Cool  <b>||</b>
+			 Within 41-55, Cold  <b>||</b>
+			 More than 55 away, Very Cold <b>||</b>
+			</h4> </div>
+
+			<p> Please enter the number <p>
+            <form>
+			<input id="guessAnswer" placeholder="Number">
+            </form>
+			<button onclick = "App()" id="submitGuess">Submit</button>
+			<button onclick = "Reset()" id="deleteGuess" name="resetButton">Reset</button>
+            <button onclick = "check()" id="Check">Check Answer</button>
+
+			<div id="numGuess">Guess #: <strong id="numRes"></strong></div>
+			<p id="num"></p>
+
+
+			<div id = "Addition">
+			<button onclick = AddO() id = "one"> Add 1 </button>
+			<button onclick = AddF() id = "five"> Add 5 </button>
+			<button onclick = AddT() id = "ten"> Add 10 </button>
+			<button onclick = AddTF() id = "twentyfive"> Add 25 </button>
+			</div>
+			</center>
+
+		</body>
+	</html>
